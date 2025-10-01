@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <!--
+    Personal one-page site for Mializo RAZANAKOTO
+    Unofficial student page for study use only.
+    Uses Bootstrap 5 and Bootstrap Icons.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mializo RAZANAKOTO - ISU Student Page</title>
+  <meta name="description" content="Space policy & outreach student building Earth-first space solutions for Madagascar and Africa.">
+  <meta name="author" content="Mializo RAZANAKOTO">
+  <meta property="og:title" content="Mializo RAZANAKOTO - ISU Student Page">
+  <meta property="og:description" content="Space policy & outreach student building Earth-first space solutions for Madagascar and Africa.">
+  <meta property="og:type" content="website">
+
+  <!-- Bootstrap CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --isu-blue: #0b3d91;
+      --isu-gold: #f0b429;
+      --isu-ink:  #0d1b2a;
+      --isu-sky:  #e6f1ff;
+    }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+    .navbar {
+      background-color: var(--isu-blue);
+    }
+    .hero {
+      background: var(--isu-ink);
+      color: white;
+      padding: 6rem 1rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    .section-title {
+      color: var(--isu-blue);
+      margin-bottom: 1rem;
+    }
+    .timeline {
+      border-left: 3px solid var(--isu-gold);
+      margin-left: 1rem;
+      padding-left: 1rem;
+    }
+    .timeline-entry {
+      margin-bottom: 1.5rem;
+    }
+    footer {
+      background: var(--isu-blue);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    a.skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--isu-gold);
+      color: black;
+      padding: 8px;
+      z-index: 100;
+    }
+    a.skip-link:focus {
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Mializo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cv">CV</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item"><button id="themeToggle" class="btn btn-sm btn-light ms-2" aria-label="Toggle theme"><i class="bi bi-sun"></i></button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Mializo RAZANAKOTO</h1>
+    <p class="lead">Space policy & outreach student building Earth-first space solutions for Madagascar and Africa.</p>
+    <div class="d-flex justify-content-center gap-2 mt-3">
+      <a href="#projects" class="btn btn-warning">Projects</a>
+      <a href="#cv" class="btn btn-outline-light">CV</a>
+      <a href="#contact" class="btn btn-light">Contact</a>
+    </div>
+    <p class="mt-4"><small>Unofficial student page. “International Space University” named here for study use only.</small></p>
+  </section>
+
+  <main id="main" class="container my-5">
+
+    <!-- About -->
+    <section id="about" class="mb-5">
+      <h2 class="section-title">About</h2>
+      <p>Hello! I am from Antananarivo, Madagascar. I study at ISU (SSP 2025). My path mixes project management, astronomy outreach, and space policy.</p>
+      <h3>Focus</h3>
+      <ul>
+        <li>Space policy</li>
+        <li>Capacity building</li>
+        <li>Remote sensing</li>
+        <li>Education</li>
+        <li>Sustainable space tech</li>
+      </ul>
+      <h3>Tools</h3>
+      <p>Python, QGIS, Git, GitHub, VS Code, MATLAB, Figma, Slack</p>
+      <h3>Languages</h3>
+      <p>Malagasy, French, English</p>
+      <h3>Interests</h3>
+      <p>Astronomy outreach, satellite data for climate, sustainable agriculture, space law, STEM education</p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="mb-5">
+      <h2 class="section-title">Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Observatoire de Besely — News app</h5>
+              <p class="card-text">Collects and summarizes space & local science news for Madagascar.</p>
+              <ul>
+                <li>RSS feeds, Python, backend</li>
+                <li>Aggregation + AI summaries</li>
+                <li>Daily briefs for students</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Rapeto Kits — DIY astronomy kits</h5>
+              <p class="card-text">Low-cost kits to teach kids astronomy and fund projects.</p>
+              <ul>
+                <li>Hardware kits, manuals</li>
+                <li>Workshops and sales</li>
+                <li>Hands-on learning</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Mangrove Watch — satellite pilot</h5>
+              <p class="card-text">Use satellite imagery to monitor coastal change near Madagascar.</p>
+              <ul>
+                <li>Sentinel imagery, QGIS, Python</li>
+                <li>Change detection maps</li>
+                <li>Reports for partners</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="mb-5">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-entry">
+          <h5>Founder & Lead <small class="text-muted">Haikintana, 2015–present</small></h5>
+          <p>Built outreach programs, led youth workshops, and formed local partnerships.</p>
+        </div>
+        <div class="timeline-entry">
+          <h5>Digital Project Manager <small class="text-muted">French Air/defense projects, 2019–2024</small></h5>
+          <p>Managed complex digital projects and stakeholder coordination.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv" class="mb-5">
+      <h2 class="section-title">CV</h2>
+      <div>
+        <a id="cvBtn" href="cv.pdf" target="_blank" class="btn btn-primary d-none">Open CV</a>
+        <p id="cvNote">Add cv.pdf to enable the CV button.</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mb-5">
+      <h2 class="section-title">Contact</h2>
+      <p>Email: <span id="email">mializo.razanakoto@community.isunet.edu</span></p>
+      <div class="d-flex gap-2">
+        <a id="mailLink" href="mailto:mializo.razanakoto@community.isunet.edu" class="btn btn-success">Email</a>
+        <button id="copyEmailBtn" class="btn btn-outline-secondary">Copy email</button>
+      </div>
+      <div class="mt-3">
+        <a href="https://github.com/mializo" class="me-2"><i class="bi bi-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/mializo-razanakoto"><i class="bi bi-linkedin"></i> LinkedIn</a>
+      </div>
+    </section>
+
+    <!-- Edit Checklist -->
+    <section id="edit-checklist" class="mb-5">
+      <h2 class="section-title">Edit Checklist</h2>
+      <ul>
+        <li>Replace demo/code links if available.</li>
+        <li>Add profile.jpg or set to none.</li>
+        <li>Upload cv.pdf to enable CV button.</li>
+        <li>Update project details as progress grows.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> Mializo RAZANAKOTO — Unofficial student page</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle with localStorage
+    const themeBtn = document.getElementById('themeToggle');
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) document.documentElement.setAttribute('data-bs-theme', storedTheme);
+
+    themeBtn.addEventListener('click', () => {
+      let current = document.documentElement.getAttribute('data-bs-theme');
+      let next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-bs-theme', next);
+      localStorage.setItem('theme', next);
+      themeBtn.innerHTML = next === 'dark' ? '<i class="bi bi-sun"></i>' : '<i class="bi bi-moon"></i>';
+    });
+
+    // CV check
+    fetch('cv.pdf', {method: 'HEAD'})
+      .then(res => {
+        if (res.ok) {
+          document.getElementById('cvBtn').classList.remove('d-none');
+          document.getElementById('cvNote').classList.add('d-none');
+        }
+      }).catch(() => {});
+
+    // Copy email
+    document.getElementById('copyEmailBtn').addEventListener('click', () => {
+      const email = document.getElementById('email').textContent;
+      navigator.clipboard.writeText(email).then(() => {
+        const btn = document.getElementById('copyEmailBtn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy email', 2000);
+      });
+    });
+
+    // Smooth scroll with reduced motion respect
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href').length > 1) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            target.scrollIntoView({behavior: prefersReduced ? 'auto' : 'smooth'});
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
