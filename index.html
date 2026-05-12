@@ -224,9 +224,22 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      grid-template-columns: 260px 1fr 1fr;
+      gap: 3.5rem;
       align-items: start;
+    }
+
+    .about-photo-col { display: flex; flex-direction: column; align-items: center; }
+
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border: 3px solid var(--white);
+      outline: 1px solid var(--gray-200);
+      box-shadow: 6px 6px 0 var(--gold);
     }
 
     .about-text p {
@@ -456,8 +469,15 @@
     .fade-up.delay-4 { transition-delay: 0.4s; }
 
     /* ── RESPONSIVE ────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .about-grid { grid-template-columns: 220px 1fr; }
+      .about-grid .stats-grid { grid-column: 1 / -1; grid-template-columns: repeat(4, 1fr); }
+    }
+
     @media (max-width: 900px) {
-      .about-grid,
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-photo { max-width: 220px; aspect-ratio: 1 / 1; }
+      .about-photo-col { align-items: flex-start; }
       .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
     }
 
@@ -535,7 +555,10 @@
         <div class="section-rule"></div>
       </div>
       <div class="about-grid">
-        <div class="about-text fade-up delay-1">
+        <div class="about-photo-col fade-up delay-1">
+          <img src="assets/photo.jpg" alt="Mializo Razanakoto" class="about-photo">
+        </div>
+        <div class="about-text fade-up delay-2">
           <p>Space outreach and science diplomacy professional with 10+ years of cross-border institutional experience building partnerships and frameworks bridging Europe and Africa.</p>
           <p>Currently completing a Master of Space Studies at the International Space University (CNES Scholar, 2025–2026), deepening expertise in space policy, governance, and systems engineering.</p>
           <div class="lang-row">
@@ -544,7 +567,7 @@
             <span class="lang-chip">Malagasy</span>
           </div>
         </div>
-        <div class="stats-grid fade-up delay-2">
+        <div class="stats-grid fade-up delay-3">
           <div class="stat-card">
             <div class="stat-num">10+</div>
             <div class="stat-label">Years of institutional experience</div>
