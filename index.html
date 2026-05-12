@@ -68,7 +68,7 @@
     .nav-logo em { font-style: normal; color: var(--gold); }
 
     .nav-links {
-      display: flex; gap: 2.25rem; list-style: none;
+      display: flex; gap: 2rem; list-style: none;
     }
     .nav-links a {
       color: rgba(255,255,255,0.8);
@@ -163,6 +163,8 @@
       border: 1.5px solid transparent;
       transition: all var(--ease);
     }
+    .btn-sm { padding: 0.5rem 1.25rem; font-size: 0.72rem; }
+
     .btn-gold {
       background: var(--gold); color: var(--navy); border-color: var(--gold);
     }
@@ -224,9 +226,15 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 260px 1fr 1fr;
+      grid-template-columns: 260px 1fr;
       gap: 3.5rem;
       align-items: start;
+    }
+
+    .about-grid .stats-grid {
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(4, 1fr) !important;
+      margin-top: 0.5rem;
     }
 
     .about-photo-col { display: flex; flex-direction: column; align-items: center; }
@@ -325,11 +333,102 @@
     .card-link:hover { color: var(--gold-dark); border-color: var(--gold-dark); }
     .card-link svg { width: 11px; height: 11px; fill: currentColor; flex-shrink: 0; }
 
+    .card-request {
+      font-size: 0.825rem; color: var(--gray-600);
+      margin-top: auto; padding-top: 1.25rem;
+      font-style: italic;
+    }
+    .card-request a {
+      color: var(--navy); text-decoration: none;
+      border-bottom: 1px solid var(--gold);
+      transition: color var(--ease);
+    }
+    .card-request a:hover { color: var(--gold-dark); }
+
     .tag {
       padding: 0.2rem 0.55rem;
       font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em;
       background: rgba(13,34,64,0.06); color: var(--navy);
     }
+
+    /* ── INITIATIVES ───────────────────────────────── */
+    #initiatives { background: var(--white); }
+
+    /* ── ENGAGEMENTS ───────────────────────────────── */
+    #engagements { background: var(--gray-100); }
+
+    .eng-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .eng-item {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-left: 3px solid var(--gold);
+      padding: 1.25rem 1.5rem;
+      display: flex; flex-direction: column; gap: 0.3rem;
+      transition: box-shadow var(--ease);
+    }
+    .eng-item:hover { box-shadow: 0 4px 16px rgba(13,34,64,0.08); }
+
+    .eng-role {
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.09em; text-transform: uppercase;
+      color: var(--gold-dark);
+    }
+
+    .eng-org {
+      font-size: 0.9375rem; font-weight: 600; color: var(--navy);
+      line-height: 1.35;
+    }
+    .eng-org a {
+      color: inherit; text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color var(--ease), border-color var(--ease);
+    }
+    .eng-org a:hover { color: var(--gold-dark); border-color: var(--gold-dark); }
+
+    /* ── PRESS ─────────────────────────────────────── */
+    #press { background: var(--off-white); }
+
+    .press-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .press-cat-label {
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold);
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--gray-200);
+      margin-bottom: 1.5rem;
+    }
+
+    .press-list { list-style: none; }
+
+    .press-item {
+      padding: 0.875rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .press-item:last-child { border-bottom: none; }
+
+    .press-source {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--gold-dark); margin-bottom: 0.25rem;
+    }
+
+    .press-title { font-size: 0.9rem; line-height: 1.5; }
+    .press-title a {
+      color: var(--navy); text-decoration: none;
+      transition: color var(--ease);
+    }
+    .press-title a:hover { color: var(--gold-dark); }
 
     /* ── EXPERIENCE ────────────────────────────────── */
     #experience { background: var(--white); }
@@ -485,15 +584,16 @@
 
     /* ── RESPONSIVE ────────────────────────────────── */
     @media (max-width: 1024px) {
-      .about-grid { grid-template-columns: 220px 1fr; }
-      .about-grid .stats-grid { grid-column: 1 / -1; grid-template-columns: repeat(4, 1fr); }
+      .about-grid { grid-template-columns: 200px 1fr; }
     }
 
     @media (max-width: 900px) {
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-grid .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
       .about-photo { max-width: 220px; aspect-ratio: 1 / 1; }
       .about-photo-col { align-items: flex-start; }
       .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .press-cols { grid-template-columns: 1fr; gap: 3rem; }
     }
 
     @media (max-width: 640px) {
@@ -508,7 +608,7 @@
       .nav-links a { font-size: 1rem; }
       .nav-toggle { display: flex; }
 
-      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .about-grid .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
 
       .cv-btns { flex-direction: column; align-items: stretch; }
       .cv-btns .btn { text-align: center; }
@@ -525,7 +625,9 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
+      <li><a href="#initiatives">Initiatives</a></li>
+      <li><a href="#engagements">Engagements</a></li>
+      <li><a href="#press">Press</a></li>
       <li><a href="#cv">CV</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -574,8 +676,11 @@
           <img src="assets/photo.jpg" alt="Mializo Razanakoto" class="about-photo">
         </div>
         <div class="about-text fade-up delay-2">
-          <p>Space outreach and science diplomacy professional with 10+ years of cross-border institutional experience building partnerships and frameworks bridging Europe and Africa.</p>
-          <p>Currently completing a Master of Space Studies at the International Space University (CNES Scholar, 2025–2026), deepening expertise in space policy, governance, and systems engineering.</p>
+          <p>I grew up in Madagascar, where the night sky isn't just beautiful — it's overwhelming. That feeling of standing under a canopy of stars and sensing that you are part of something much larger than yourself: that's what started everything.</p>
+          <p>In 2015, I founded Haikintana, a Malagasy word for "astronomy", with a simple idea: to build a community where people passionate about astronomy and space could come together, learn, and grow. What began as a gathering of enthusiasts grew into something much bigger: public festivals, school outreach programmes, conferences, and eventually Madagascar's first operational astronomical observatory, built through international partnerships with French research institutions.</p>
+          <p>Along the way, I represented Haikintana at international forums, worked with the IAU, the French Astronomical Society, and institutions across Europe and Africa. Living in France for the past nine years gave me a new perspective, not just on what the space sector does, but on why it does it.</p>
+          <p>That question, <em>why</em>, became central to everything. Too often, space exploration advances because it is technically possible, without enough reflection on whether it is strategically wise, equitable, or sustainable. I want to be part of the conversation that asks those harder questions: How do we build space cooperation frameworks that are truly inclusive? How do we ensure that space benefits humanity as a whole, not just the nations that got there first?</p>
+          <p>That's what brought me to the International Space University as a CNES Scholar — and the work I want to dedicate my career to.</p>
           <div class="lang-row">
             <span class="lang-chip">French</span>
             <span class="lang-chip">English</span>
@@ -718,6 +823,171 @@
             <span class="tag">Governance</span>
             <span class="tag">Strategic Planning</span>
           </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── INITIATIVES & PROJECTS ───────────────────── -->
+  <section id="initiatives" class="section">
+    <div class="container">
+      <div class="fade-up">
+        <p class="section-label">Initiatives &amp; Projects</p>
+        <h2 class="section-title">Initiatives &amp; Projects</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="cards-grid">
+
+        <div class="card fade-up delay-1">
+          <h3 class="card-title">Haikintana</h3>
+          <p class="card-desc">Space outreach organisation I founded in 2015, dedicated to advancing astronomy education, science diplomacy, and capacity building in Madagascar.</p>
+          <a href="https://haikintana.org/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold btn-sm">Visit &rarr;</a>
+        </div>
+
+        <div class="card fade-up delay-2">
+          <h3 class="card-title">Observatoire des Étoiles de Madagascar (OEDM)</h3>
+          <p class="card-desc">Madagascar's first operational astronomical observatory, built through a cross-border consortium of French and Malagasy research institutions.</p>
+          <a href="https://oedm.haikintana.org/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold btn-sm">Visit &rarr;</a>
+        </div>
+
+        <div class="card fade-up delay-3">
+          <h3 class="card-title">IAU NameExoWorlds — Rapeto &amp; Trimobe</h3>
+          <p class="card-desc">Served as National Coordinator for Madagascar in the IAU NameExoWorlds 2019 campaign, leading the national effort that successfully named exoplanet HD153950b "Rapeto" and its host star "Trimobe".</p>
+          <a href="https://nameexoworlds.iau.org/madagascar" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold btn-sm">Visit &rarr;</a>
+        </div>
+
+        <div class="card fade-up delay-1">
+          <h3 class="card-title">Asteroid Day Madagascar</h3>
+          <p class="card-desc">Regional Coordinator for Asteroid Day in Madagascar, building national public awareness frameworks on planetary defence and engaging thousands of participants annually.</p>
+          <a href="https://asteroidday.org/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold btn-sm">Visit &rarr;</a>
+        </div>
+
+        <div class="card fade-up delay-2">
+          <h3 class="card-title">Why Space Matters — Podcast</h3>
+          <p class="card-desc">Podcast series I directed at ISU, interviewing high-level space decision-makers on space communication strategies. Supported by the John Templeton Foundation.</p>
+          <a href="https://www.youtube.com/watch?v=nrWKf-AFkLQ" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold btn-sm">Watch &rarr;</a>
+        </div>
+
+        <div class="card fade-up delay-3">
+          <h3 class="card-title">Planetary Defence Governance — Research Paper</h3>
+          <p class="card-desc">"Strengthening International Cooperation Frameworks for Effective Planetary Defense Governance." Conducted and presented at ISU, 2025–2026.</p>
+          <p class="card-request">Available upon request &ensp;&middot;&ensp; <a href="mailto:mializo.razanakoto@gmail.com">mializo.razanakoto@gmail.com</a></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ENGAGEMENTS & NETWORK ────────────────────── -->
+  <section id="engagements" class="section">
+    <div class="container">
+      <div class="fade-up">
+        <p class="section-label">Engagements &amp; Network</p>
+        <h2 class="section-title">Engagements &amp; Network</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="eng-grid">
+
+        <div class="eng-item fade-up delay-1">
+          <div class="eng-role">Member of the Steering Committee</div>
+          <div class="eng-org"><a href="https://www.afips.space/" target="_blank" rel="noopener noreferrer">African Initiatives for Planetary Sciences (AFIPS)</a></div>
+        </div>
+
+        <div class="eng-item fade-up delay-2">
+          <div class="eng-role">Board Member</div>
+          <div class="eng-org"><a href="https://www.saf-lastronomie.com/" target="_blank" rel="noopener noreferrer">Société Astronomique de France</a></div>
+        </div>
+
+        <div class="eng-item fade-up delay-3">
+          <div class="eng-role">Member</div>
+          <div class="eng-org"><a href="https://spacegeneration.org/" target="_blank" rel="noopener noreferrer">Space Generation Advisory Council (SGAC)</a></div>
+        </div>
+
+        <div class="eng-item fade-up delay-1">
+          <div class="eng-role">Member</div>
+          <div class="eng-org"><a href="https://www.women-in-aerospace.eu/" target="_blank" rel="noopener noreferrer">Women in Aerospace Europe</a></div>
+        </div>
+
+        <div class="eng-item fade-up delay-2">
+          <div class="eng-role">Space Law &amp; Policy Working Group Member</div>
+          <div class="eng-org"><a href="https://spacegeneration.org/" target="_blank" rel="noopener noreferrer">Space Generation Advisory Council (SGAC)</a></div>
+        </div>
+
+        <div class="eng-item fade-up delay-3">
+          <div class="eng-role">Volunteer</div>
+          <div class="eng-org">Les Petits Cueilleurs d'Étoiles</div>
+        </div>
+
+        <div class="eng-item fade-up delay-1">
+          <div class="eng-role">Contributing Writer</div>
+          <div class="eng-org"><a href="https://lastronomieafrique.com/" target="_blank" rel="noopener noreferrer">L'Astronomie Afrique</a></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PRESS & MEDIA ────────────────────────────── -->
+  <section id="press" class="section">
+    <div class="container">
+      <div class="fade-up">
+        <p class="section-label">Press &amp; Media</p>
+        <h2 class="section-title">Press &amp; Media</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="press-cols fade-up delay-1">
+
+        <div class="press-col">
+          <p class="press-cat-label">Written Press</p>
+          <ul class="press-list">
+            <li class="press-item">
+              <div class="press-source">Université Paris-Saclay</div>
+              <div class="press-title"><a href="https://www.universite-paris-saclay.fr/actualites/developper-astronomie-sous-le-ciel-etoile-de-madagascar" target="_blank" rel="noopener noreferrer">Développer l'astronomie sous le ciel étoilé de Madagascar</a></div>
+            </li>
+            <li class="press-item">
+              <div class="press-source">L'Astronomie Afrique</div>
+              <div class="press-title"><a href="https://lastronomieafrique.com/haikintana-premiere-association-dastronomie-a-madagascar/" target="_blank" rel="noopener noreferrer">Haikintana, première association d'astronomie à Madagascar</a></div>
+            </li>
+            <li class="press-item">
+              <div class="press-source">L'Astronomie Afrique</div>
+              <div class="press-title"><a href="https://lastronomieafrique.com/madagascar-sous-les-etoiles-2025-et-lecole-panafricaine-dastronomie-decoles-du-monde-madagascar/" target="_blank" rel="noopener noreferrer">Madagascar sous les Étoiles 2025</a></div>
+            </li>
+            <li class="press-item">
+              <div class="press-source">RFI</div>
+              <div class="press-title"><a href="https://www.rfi.fr/fr/podcasts/autour-de-la-question/20220713-quelle-astronomie-sous-le-ciel-de-madagascar" target="_blank" rel="noopener noreferrer">Quelle astronomie sous le ciel de Madagascar?</a></div>
+            </li>
+            <li class="press-item">
+              <div class="press-source">Nocomment.mg</div>
+              <div class="press-title"><a href="https://www.nocomment.mg/haikintana-astronomy-dessine-moi-le-ciel" target="_blank" rel="noopener noreferrer">Haikintana Astronomy: dessine-moi le ciel</a></div>
+            </li>
+            <li class="press-item">
+              <div class="press-source">Nocomment.mg</div>
+              <div class="press-title"><a href="https://www.nocomment.mg/index.php/mializo-razanakoto-haikintana-astronomy-des-exoplanetes-baptisees-rapeto-et-trimobe" target="_blank" rel="noopener noreferrer">Des exoplanètes baptisées Rapeto et Trimobe</a></div>
+            </li>
+            <li class="press-item">
+              <div class="press-source">Le Quotidien de La Réunion</div>
+              <div class="press-title"><a href="https://www.lequotidien.re/article/actualites/2022/05/15/madagascar-un-observatoire-astronomique-en-pleine-brousse" target="_blank" rel="noopener noreferrer">Madagascar: un observatoire astronomique en pleine brousse</a></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="press-col">
+          <p class="press-cat-label">Video &amp; Audio</p>
+          <ul class="press-list">
+            <li class="press-item">
+              <div class="press-source">YouTube</div>
+              <div class="press-title"><a href="https://www.youtube.com/watch?v=fUqf_0b7WyU" target="_blank" rel="noopener noreferrer">Haikintana feature</a></div>
+            </li>
+            <li class="press-item">
+              <div class="press-source">YouTube</div>
+              <div class="press-title"><a href="https://www.youtube.com/watch?v=za7tx5FB8wk" target="_blank" rel="noopener noreferrer">Madagascar sous les Étoiles</a></div>
+            </li>
+            <li class="press-item">
+              <div class="press-source">RFI Podcast</div>
+              <div class="press-title"><a href="https://www.rfi.fr/fr/podcasts/autour-de-la-question/20220713-quelle-astronomie-sous-le-ciel-de-madagascar" target="_blank" rel="noopener noreferrer">Autour de la question</a></div>
+            </li>
+          </ul>
         </div>
 
       </div>
