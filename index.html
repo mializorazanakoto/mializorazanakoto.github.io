@@ -310,6 +310,21 @@
       line-height: 1.75; flex: 1; margin-bottom: 1.25rem;
     }
     .card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+    .card-links {
+      display: flex; flex-wrap: wrap; gap: 0.625rem; margin-bottom: 1rem;
+    }
+    .card-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.775rem; font-weight: 600; color: var(--navy);
+      text-decoration: none; letter-spacing: 0.02em;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 1px;
+      transition: color var(--ease), border-color var(--ease);
+    }
+    .card-link:hover { color: var(--gold-dark); border-color: var(--gold-dark); }
+    .card-link svg { width: 11px; height: 11px; fill: currentColor; flex-shrink: 0; }
+
     .tag {
       padding: 0.2rem 0.55rem;
       font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em;
@@ -663,6 +678,16 @@
           <div class="card-context">Haikintana · 2015–2025</div>
           <h3 class="card-title">Madagascar's First Astronomical Observatory</h3>
           <p class="card-desc">Orchestrated a cross-border consortium of 5 French and Malagasy research institutions to establish Madagascar's first operational astronomical observatory and a permanent Franco-Malagasy scientific cooperation framework.</p>
+          <div class="card-links">
+            <a href="https://haikintana.org/" target="_blank" rel="noopener noreferrer" class="card-link">
+              <svg viewBox="0 0 24 24"><path d="M14 3v2H7v14h10v-3h2v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h8zm7 8-4-4v3h-7v2h7v3l4-4z"/></svg>
+              Haikintana
+            </a>
+            <a href="https://oedm.haikintana.org/" target="_blank" rel="noopener noreferrer" class="card-link">
+              <svg viewBox="0 0 24 24"><path d="M14 3v2H7v14h10v-3h2v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h8zm7 8-4-4v3h-7v2h7v3l4-4z"/></svg>
+              Observatory
+            </a>
+          </div>
           <div class="card-tags">
             <span class="tag">Institutional Diplomacy</span>
             <span class="tag">Science Diplomacy</span>
